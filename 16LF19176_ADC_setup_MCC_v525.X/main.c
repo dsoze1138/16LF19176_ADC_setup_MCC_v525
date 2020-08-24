@@ -83,11 +83,11 @@ void main(void)
             ADC_displayed = ADC_sample;
             printf("ADC = %04X\r\n",ADC_sample);
         }
-        else{
+        else
+        {
             ADC_sample = ADCC_GetSingleConversion(channel_ANC3);
             __delay_ms(100);
         }
-        
     }
 }
 /**
