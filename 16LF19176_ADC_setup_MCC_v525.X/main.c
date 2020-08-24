@@ -71,8 +71,8 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
 
     printf("\r\nADC test application\r\n");
-    ADC_displayed = 0;
-    ADC_sample    = 1;
+    ADC_displayed = 1;
+    ADC_sample    = 0;
     while (1)
     {
         // Add your application code
@@ -82,6 +82,10 @@ void main(void)
             ADC_sample = ADCC_GetSingleConversion(channel_ANC3);
             ADC_displayed = ADC_sample;
             printf("ADC = %04X\r\n",ADC_sample);
+        }
+        else{
+            ADC_sample = ADCC_GetSingleConversion(channel_ANC3);
+            __delay_ms(100);
         }
         
     }
